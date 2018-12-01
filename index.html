@@ -1,16 +1,34 @@
 <!DOCTYPE html>
 <html>
-
     <head>
-        <title> UBC LOCAL HACK DAY </title>
+            <title> UBC LOCAL HACK DAY </title>
+
+            <link rel='stylesheet' type='text/css' href='style.css'>
+
+            <script>
+                    document.write('Time loaded: '+Date()+'<br />');
+                    function refreshpage(){
+                        location.reload();
+                    }
+            </script>
     </head>
 
-        <body>
-        <h1>Map</h1>
-            
-        <a href = "#contact" target = "_blank">
-            <img src="images/skytrain_map.jpg"/>
-        </a>
-        </body>
+    <div class="container">
+            <img src="images/skytrain_map.jpg" alt="Map of Skytrain Stops" style="width:100%;">
+            <div class="top-left">
+                <h1>Status of Elavator and Escalators at Skytrain Stations</h1>
+            </div>
+    </div>
+
+    <div class="AlertTitle">
+        <h2>Station Access</h2>
+    </div>
+
+    <button id="refresh">Refresh</button>
+
+
+
+
+
 
 </html>
