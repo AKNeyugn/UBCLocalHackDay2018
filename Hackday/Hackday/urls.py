@@ -21,5 +21,5 @@ from django.contrib import admin
 
 urlpatterns = [
     url('admin/', admin.site.urls),
-    url('maps/', include('map.urls'))
+    url('^$', include('map.urls'))
 ]

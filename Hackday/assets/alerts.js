@@ -1,6 +1,5 @@
 $(document).ready(function () {
-    $.getJSON("StationAccessAlerts.json", function (data) {
-
+    $.getJSON("static/StationAccessAlerts.json", function (data) {
         var arrItems = [];      // THE ARRAY TO STORE JSON ITEMS.
         $.each(data, function (index, value) {
             arrItems.push(value);       // PUSH THE VALUES INSIDE THE ARRAY.
@@ -41,7 +40,7 @@ $(document).ready(function () {
         }
 
         // FINALLY ADD THE NEWLY CREATED TABLE WITH JSON DATA TO A CONTAINER.
-        var divContainer = document.getElementById("showData");
+        var divContainer = document.getElementById("alerts");
         divContainer.innerHTML = "";
         divContainer.appendChild(table);
     });
