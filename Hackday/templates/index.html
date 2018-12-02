@@ -1,0 +1,110 @@
+{% load static from staticfiles %}
+
+<!DOCTYPE html>
+<html>
+    <head>
+            <title> UBC LOCAL HACK DAY </title>
+
+            <link rel='stylesheet' href="{% static 'style.css' %}">
+
+            <script src="assets/alerts.js" defer></script>
+            <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+            <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.10.1/jquery.min.js"></script>
+
+
+            <style>
+                    table 
+                    {
+                        width: 100%;
+                        font: 17px Calibri;
+                    }
+                    table, th, td 
+                    {
+                        border: solid 1px #DDD;
+                        border-collapse: collapse;
+                        padding: 2px 3px;
+                        text-align: center;
+                    }
+                </style>
+    </head>
+   
+    <body>
+        <div class="container">
+                <img src="./skytrain_map.jpg"> alt="Map of Skytrain Stops" style="width:100%;">
+                <div class="top-left">
+                    <h1>Status of Elavator and Escalators at Skytrain Stations</h1>
+                </div>
+        </div>
+    
+        <div class="AlertTitle">
+            <h2>Station Access</h2>
+        </div>
+    
+        <script>
+                document.write('Time page was loaded: '+Date()+'<br />');
+                function refreshpage(){
+                    location.reload();
+                }
+        </script>
+    
+        <button id="refresh" onclick="refreshpage()">Refresh</button>
+        
+        
+        <!-- Table of alerts that will be loaded-->
+        <p>Data extracted from a JSON and converted to an HTML table.</p>
+        <div id="alerts"></div>
+    </body>
+
+    <!-- <script>
+        $(document).ready(function () {
+            $.getJSON("file://Users/CurtisLui/Documents/Documents/Hackathon/Local_Hack_Day_2018/StationAccessAlerts.json", function (data) {
+
+                var arrItems = [];      // THE ARRAY TO STORE JSON ITEMS.
+                $.each(data, function (index, value) {
+                    arrItems.push(value);       // PUSH THE VALUES INSIDE THE ARRAY.
+                });
+
+                // EXTRACT VALUE FOR TABLE HEADER.
+                var col = [];
+                for (var i = 0; i < arrItems.length; i++) {
+                    for (var key in arrItems[i]) {
+                        if (col.indexOf(key) === -1) {
+                            col.push(key);
+                        }
+                    }
+                }
+
+                // CREATE DYNAMIC TABLE.
+                var table = document.createElement("table");
+
+                // CREATE HTML TABLE HEADER ROW USING THE EXTRACTED HEADERS ABOVE.
+
+                var tr = table.insertRow(-1);                   // TABLE ROW.
+
+                for (var i = 0; i < col.length; i++) {
+                    var th = document.createElement("th");      // TABLE HEADER.
+                    th.innerHTML = col[i];
+                    tr.appendChild(th);
+                }
+
+                // ADD JSON DATA TO THE TABLE AS ROWS.
+                for (var i = 0; i < arrItems.length; i++) {
+
+                    tr = table.insertRow(-1);
+
+                    for (var j = 0; j < col.length; j++) {
+                        var tabCell = tr.insertCell(-1);
+                        tabCell.innerHTML = arrItems[i][col[j]];
+                    }
+                }
+
+                // FINALLY ADD THE NEWLY CREATED TABLE WITH JSON DATA TO A CONTAINER.
+                var divContainer = document.getElementById("showData");
+                divContainer.innerHTML = "";
+                divContainer.appendChild(table);
+            });
+        });
+    </script>
+     -->
+
+</html>
