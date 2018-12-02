@@ -1,5 +1,14 @@
 $(document).ready(function () {
+    
+    $.ajax({
+        type: "POST",
+        url: "parser.py",
+      }).done(function( o ) {
+        alert("asd")
+      });
+
     $.getJSON("static/StationAccessAlerts.json", function (data) {
+        alert("asd")
         var arrItems = [];      // THE ARRAY TO STORE JSON ITEMS.
         $.each(data, function (index, value) {
             arrItems.push(value);       // PUSH THE VALUES INSIDE THE ARRAY.
@@ -44,4 +53,14 @@ $(document).ready(function () {
         divContainer.innerHTML = "";
         divContainer.appendChild(table);
     });
+
+
+
+    
 });
+
+$("#waterfront").on("click", () => {
+    alert("asd")
+})
+
+

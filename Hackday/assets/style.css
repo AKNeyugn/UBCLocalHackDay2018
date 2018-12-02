@@ -71,6 +71,23 @@ h2{
     text-align: center;
     margin: 20px auto;
     cursor: pointer;
-
 }
+
+.container .waterfront {
+    position: relative;
+    top: -1105px;
+    left: -190px;
+    background-color: red;
+    border: none;
+    color: white;
+    padding: 20px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 0px;
+    margin: 4px 2px;
+    cursor: pointer;
+    border-radius: 100%;
+}
+
 

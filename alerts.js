@@ -41,7 +41,7 @@ $(document).ready(function () {
         }
 
         // FINALLY ADD THE NEWLY CREATED TABLE WITH JSON DATA TO A CONTAINER.
-        var divContainer = document.getElementById("showData");
+        var divContainer = document.getElementById("alerts");
         divContainer.innerHTML = "";
         divContainer.appendChild(table);
     });
