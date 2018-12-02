@@ -12,6 +12,12 @@ $(document).ready(function () {
         var arrItems = [];      // THE ARRAY TO STORE JSON ITEMS.
         $.each(data, function (index, value) {
             arrItems.push(value);       // PUSH THE VALUES INSIDE THE ARRAY.
+            console.log($(`#${value.Station.toLowerCase()}`))
+            if ($(`#${value.Station.toLowerCase()}`)) {
+                $(`#${value.Station.toLowerCase()}`).on("click", () => {
+                    alert("asd")
+                })
+            }
         });
 
         // EXTRACT VALUE FOR TABLE HEADER.
@@ -55,12 +61,12 @@ $(document).ready(function () {
     });
 
 
-
+    // $("#waterfront").on("click", () => {
+    //     alert("asd")
+    // })
     
 });
 
-$("#waterfront").on("click", () => {
-    alert("asd")
-})
+
 
 
