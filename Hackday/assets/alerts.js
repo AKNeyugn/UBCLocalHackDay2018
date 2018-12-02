@@ -4,18 +4,20 @@ $(document).ready(function () {
         type: "POST",
         url: "parser.py",
       }).done(function( o ) {
-        alert("asd")
+        // alert("asd")
       });
 
     $.getJSON("static/StationAccessAlerts.json", function (data) {
-        alert("asd")
+        // alert("asd")
         var arrItems = [];      // THE ARRAY TO STORE JSON ITEMS.
         $.each(data, function (index, value) {
             arrItems.push(value);       // PUSH THE VALUES INSIDE THE ARRAY.
-            console.log($(`#${value.Station.toLowerCase()}`))
-            if ($(`#${value.Station.toLowerCase()}`)) {
-                $(`#${value.Station.toLowerCase()}`).on("click", () => {
-                    alert("asd")
+            let stationName = value.Station.toLowerCase().replace(' station', '')
+            stationName = stationName.replace(' ', '-')
+            let tag = document.getElementById(stationName)
+            if (tag) {
+                tag.addEventListener('click', () => {
+                    alert(value.Station)
                 })
             }
         });
